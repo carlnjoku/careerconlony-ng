@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2606e38914855b1528ad14f243abb6dc722d1bfe" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> Home</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f9cceee823f60794345816d2f79754b4bf858e16" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> Profile</source>
+        <target>Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3b3e4afd63050dee4981c8d1c500fa2713b2b07a" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> Contacts</source>
+        <target>Contacts</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b4645c0a596ba4c2db83a3f1e19a587fe41877be" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i"/> Jobs</source>
+        <target>Jobs</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navbar/navbar.component.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

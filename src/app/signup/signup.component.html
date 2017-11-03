@@ -1,0 +1,119 @@
+<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header" style="padding-left:30px">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt=""></a>
+
+			<ul class="nav navbar-nav pull-right visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile" style="padding-right:30px">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a routerLink="/login">Login</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+	<!-- Page container -->
+	<div class="page-container login-container" @page>
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Advanced login -->
+				<form [formGroup]="signup_form" (ngSubmit)="signup(signup_form.value)">
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							
+							<h5 class="content-group">Create account <small class="display-block">All fields are required</small></h5>
+						</div>
+
+						<div class="content-divider text-muted form-group"><span>Your credentials</span></div>
+				
+					
+            <div class="form-group has-feedback has-feedback-left">
+              <input type="text" formControlName="firstname" id="firstname" class="form-control" placeholder="First name">
+							<div class="form-control-feedback">
+								<i class="icon-user-check text-muted"></i>
+              </div>
+              <span *ngIf="signup_form.controls.firstname.touched && signup_form.controls['firstname'].invalid" class="help-block text-danger"> 
+								<span *ngIf="signup_form.controls.firstname.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> First name is required</span>
+								<span *ngIf="signup_form.controls.firstname.errors.minlength" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> First name must be more than 3 characters</span>
+                <span *ngIf="signup_form.controls.firstname.errors.cannotContainSpace" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Last name cannot contain space</span>
+              </span>
+						</div>
+
+            <div class="form-group has-feedback has-feedback-left">
+              <input type="text" formControlName="lastname" id="lastname" class="form-control" placeholder="Last name">
+							<div class="form-control-feedback">
+								<i class="icon-user-check text-muted"></i>
+              </div>
+              <span *ngIf="signup_form.controls.lastname.touched && signup_form.controls.lastname.invalid" class="help-block text-danger"> 
+                <span *ngIf="signup_form.controls.lastname.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Last name is required</span>
+                <span *ngIf="signup_form.controls.lastname.errors.cannotContainSpace" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Last name cannot contain space</span>
+              </span>
+            </div>
+            
+            <div class="form-group has-feedback has-feedback-left">
+              <input type="email" formControlName="email" id="email" class="form-control" placeholder="Your email">
+              <div *ngIf="signup_form.controls.email.pending">Checking for uniqueness ...</div>
+							<div class="form-control-feedback">
+								<i class="icon-mention text-muted"></i>
+              </div>
+              <span *ngIf="signup_form.controls.email.touched && signup_form.controls.email.invalid" class="help-block text-danger"> 
+                <span *ngIf="signup_form.controls.email.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Email is required</span>
+                <span *ngIf="signup_form.controls.email.errors.email" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Enter a valid email address</span>
+                <span *ngIf="signup_form.controls.email.errors.cannotContainSpace" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Email cannot contain space</span>
+                <span *ngIf="signup_form.controls.email.errors.shouldBeUnique" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Email already in use</span>
+              </span>
+              <!--<span class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> This username is already taken</span> -->
+						</div>
+
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="password" formControlName="password" id="password" class="form-control" placeholder="Create password">
+							<div class="form-control-feedback">
+								<i class="icon-user-lock text-muted"></i>
+              </div>
+              <span *ngIf="signup_form.controls.password.touched && signup_form.controls.password.invalid" class="help-block text-danger"> 
+                <span *ngIf="signup_form.controls.password.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Password is required</span>
+                <span *ngIf="signup_form.controls.password.errors.minlength" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Password should be minimum of {{password.errors.minlength.requiredLength}} characters</span>
+              </span>
+						</div>
+
+						
+						
+
+						<div class="content-divider text-muted form-group"><span>Additions</span></div>
+<!--
+						<div class="form-group">
+							
+
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" formControlName ="terms" class="styled">
+									Accept <a href="#">terms of service</a>
+									<span *ngIf="terms.touched && terms.invalid" class="help-block text-danger">Accept Terms & condition to continue</span> 
+								</label>
+							</div>
+						</div>
+-->
+						<button type="submit" class="btn bg-teal btn-block btn-lg" [disabled]="signup_form.valid">Register <i class="icon-circle-right2 position-right"></i></button>
+					</div>
+				</form>
+				<!-- /advanced login -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+

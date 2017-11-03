@@ -1,0 +1,284 @@
+<!-- Page container -->
+<div class="page-container" @page >
+		<!-- Page content -->
+		<div class="page-content">
+            <!-- Main sidebar -->
+			<div class="sidebar sidebar-main sidebar-default sidebar-separate">
+				<div class="sidebar-content">
+
+			 
+					<!-- Online users -->
+					<div class="sidebar-category">
+						<div class="category-title">
+							<span>Post Staistice</span>
+							<ul class="icons-list">
+								<li><a href="#" data-action="collapse"></a></li>
+							</ul>
+						</div>
+
+						<div class="category-content">
+							<ul class="media-list">
+								<li class="media">
+									<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">James Alexander</a>
+										<span class="text-size-mini text-muted display-block">Santa Ana, CA.</span>
+									</div>
+									<div class="media-right media-middle">
+										<span class="status-mark border-success"></span>
+									</div>
+								</li>
+
+								<li class="media">
+									<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">Jeremy Victorino</a>
+										<span class="text-size-mini text-muted display-block">Dowagiac, MI.</span>
+									</div>
+									<div class="media-right media-middle">
+										<span class="status-mark border-danger"></span>
+									</div>
+								</li>
+
+								<li class="media">
+									<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">Margo Baker</a>
+										<span class="text-size-mini text-muted display-block">Kasaan, AK.</span>
+									</div>
+									<div class="media-right media-middle">
+										<span class="status-mark border-success"></span>
+									</div>
+								</li>
+
+								<li class="media">
+									<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">Beatrix Diaz</a>
+										<span class="text-size-mini text-muted display-block">Neenah, WI.</span>
+									</div>
+									<div class="media-right media-middle">
+										<span class="status-mark border-warning"></span>
+									</div>
+								</li>
+
+								<li class="media">
+									<a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-sm img-circle" alt=""></a>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">Richard Vango</a>
+										<span class="text-size-mini text-muted display-block">Grapevine, TX.</span>
+									</div>
+									<div class="media-right media-middle">
+										<span class="status-mark border-grey-400"></span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /online-users -->
+
+
+					
+				</div>
+			</div>
+            <!-- /main sidebar -->
+            
+           
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Grid -->
+				<div class="row">
+
+                    <div class="col-md-8">
+                        <!-- Share your thoughts -->
+						<div class="panel panel-flat">
+							<div class="panel-heading">
+								
+								<h6 class="panel-title">Add a new post</h6>
+
+								<div class="heading-elements">
+									<ul class="icons-list">
+				                    	<li class="dropdown">
+					                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					                    		<i class="icon-arrow-down12"></i>
+				                    		</a>
+
+					                    	<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><i class="icon-popout"></i> Notifications</a></li>
+												<li><a href="#"><i class="icon-embed"></i> Embed video</a></li>
+												<li><a href="#"><i class="icon-pin-alt"></i> Show location</a></li>
+												<li class="divider"></li>
+												<li><a href="#"><i class="icon-cog3"></i> Settings</a></li>
+											</ul>
+				                    	</li>
+			                    	</ul>
+								</div>
+							</div>
+
+						
+						
+						<div class="panel-body">
+							
+							
+							<form [formGroup]="form" (submit)="newCoy()" >
+									<div class="form-group">
+										<input type="hidden" id="memberID" formControlName="memberID" value="1" class="form-control bg-slate-300"   placeholder="Enter title">
+									</div> 
+									<div class="form-group">
+										<input type="text" id="companyname" formControlName="companyname" class="form-control bg-slate-300"   placeholder="Company name">
+										<span *ngIf="companyname.touched && companyname.invalid" class="help-block text-danger"> 
+											<span *ngIf="companyname.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Company name cannot be empty</span>
+											<span *ngIf="companyname.errors.minlength" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Company name cannot be less than 2 characters</span>
+										</span>
+									</div> 
+									<div class="form-group">
+										<input type="text"  id="url" formControlName="url" class="form-control bg-slate-300"   placeholder="Your website address">
+										<span *ngIf="url.touched && url.invalid" class="help-block text-danger"> 
+											<span *ngIf="url.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Website cannot be empty</span>
+										</span>
+									</div> 
+									<div class="form-group">
+										<input type="text"  id="email" formControlName="email" class="form-control bg-slate-300"   placeholder="Email">
+										<span *ngIf="email.touched && email.invalid" class="help-block text-danger"> 
+											<span *ngIf="email.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Email is required</span>
+											<span *ngIf="email.errors.email" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Enter a valid email address</span>
+											<span *ngIf="email.errors.cannotContainSpace" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Email cannot contain space</span>
+											<span *ngIf="email.errors.shouldBeUnique" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Email already in use</span>
+										</span>
+									</div> 
+									<div class="form-group">
+										<select id="industry" formControlName="industry" data-placeholder="Choose your industry..." class="form-control border-teal required">
+										
+											<option></option> 
+											<option  *ngFor='let industry of industrylist' [ngValue]='industry'>{{industry}}</option> 
+											<option value="monster">Monster.com</option> 
+											<option value="linkedin">LinkedIn</option> 
+											<option value="google">Google</option> 
+											<option value="adwords">Google AdWords</option> 
+											<option value="other">Other source</option>
+										</select>
+										<span *ngIf="industry.touched && industry.invalid" class="help-block text-danger"> 
+											<span *ngIf="industry.errors.required" class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> Url cannot be empty</span>
+										</span>
+										
+									</div> 
+								<div class="form-group">
+									<textarea id="about_coy" formControlName="about_coy"  class="form-control mb-15 bg-slate-300" rows="3" cols="1" placeholder="About your company"></textarea>
+								</div>  
+									<div class="row">
+			                    		<div class="col-xs-6">
+				                        	<ul class="icons-list icons-list-extended mt-10">
+											                <li><a class="openImageUploader" href="javascript:;" data-popup="tooltip" data-container="body" title="Add Photo"><i class="icon-images2"></i></a></li>						
+				                              <li><a class="openVideoUploader" href="javascript:;" data-popup="tooltip" data-container="body" title="Add video"><i class="icon-video-camera2"></i></a></li>
+				                          </ul>
+										          </div>
+										
+										 
+
+			                    		<div class="col-xs-6 text-right">
+				                            <button type="submit" class="btn btn-inverse btn-labeled btn-labeled-right">Publish <b><i class="icon-circle-right2"></i></b></button>
+			                    		</div>
+			                    	</div>
+		                    	</form>
+	                    	</div>
+						      </div>
+                        <!-- /share your thoughts -->
+						
+						
+                        
+					
+					</div>
+
+					<div class="col-md-4">
+
+						<!-- Vertical form -->
+						<div class="panel panel-flat">
+							<!-- Latest updates -->
+							<div class="sidebar-category">
+								<div class="category-title">
+									<span>Posts List</span>
+									<ul class="icons-list">
+										<li><a href="#" data-action="collapse"></a></li>
+									</ul>
+								</div>
+
+								<div class="category-content">
+									<ul class="media-list">
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+											</div>
+
+											<div class="media-body">
+												Drop the IE <a href="#">specific hacks</a> for temporal inputs
+												<div class="media-annotation">4 minutes ago</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
+											</div>
+											
+											<div class="media-body">
+												Add full font overrides for popovers and tooltips
+												<div class="media-annotation">36 minutes ago</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+											</div>
+											
+											<div class="media-body">
+												<a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
+												<div class="media-annotation">2 hours ago</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+											</div>
+											
+											<div class="media-body">
+												<a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
+												<div class="media-annotation">Dec 18, 18:36</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+											</div>
+											
+											<div class="media-body">
+												Have Carousel ignore keyboard events
+												<div class="media-annotation">Dec 12, 05:46</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- /latest updates -->
+
+						</div>
+						<!-- /vertical form -->
+
+					</div>
+				</div>
+				<!-- /grid -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+

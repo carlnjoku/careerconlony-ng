@@ -1,0 +1,239 @@
+<!-- Page container -->
+<div class="page-container" @page >
+		<!-- Page content -->
+		<div class="page-content">
+           
+           
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Grid -->
+				<div class="row">
+
+					<div class="col-md-1"></div>
+
+                    <div class="col-md-7">
+                        <!-- Share your thoughts -->
+						<div class="panel panel-flat">
+							<div class="panel-heading">
+								
+								<h6 class="panel-title">Add a new post</h6>
+
+								<div class="heading-elements">
+									<ul class="icons-list">
+				                    	<li class="dropdown">
+					                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					                    		<i class="icon-arrow-down12"></i>
+				                    		</a>
+
+					                    	<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><i class="icon-popout"></i> Notifications</a></li>
+												<li><a href="#"><i class="icon-embed"></i> Embed video</a></li>
+												<li><a href="#"><i class="icon-pin-alt"></i> Show location</a></li>
+												<li class="divider"></li>
+												<li><a href="#"><i class="icon-cog3"></i> Settings</a></li>
+											</ul>
+				                    	</li>
+			                    	</ul>
+								</div>
+							</div>
+
+							<div class="panel-body">
+								
+								<div class="col-md-12 imageUploader">
+									<div class="media-left">
+										<a href="javascript:;" class="btn border-default text-grey btn-flat btn-square btn-icon btn-xs closeImageUploader"><i class="icon-cross2"></i></a>
+									</div>
+								
+										<div id="my-snippet" class="slim" style="width:100%">
+
+												<!-- my first cropper -->
+											<input type="file" id="myCropper"/>
+											
+										</div>
+									
+								</div>
+	
+								<div class="col-md-12 videoUploader ">
+									<div class="media-left">
+											<a href="javascript:;" class="btn border-default text-grey btn-flat btn-square btn-icon btn-xs closeVideoUploader"><i class="icon-cross2"></i></a>
+									</div>
+									
+										<div style="width:100%">
+
+											<form action="https://upload.embed.ly/1/video?key=d2f283608a3b4fa4a6ba77b522d4e26d" method="POST" enctype="multipart/form-data">
+												<input id="video_file" name="video_file" type="file">
+												<input type="submit" class="button" value="Upload">
+											</form>
+											<div class="video-display"></div>
+
+											<div class="input-group">
+												<span class="input-group-addon bg-info-700"><i class="icon-lock2"></i></span>
+												<input type="text" class="form-control bg-info" placeholder="Solid background color">
+												<span class="input-group-btn">
+													<button class="btn bg-info-700" type="button"><i class="icon-help"></i></button>
+												</span>
+											</div>
+											
+											
+											From Youtube, vemeo, facebook
+										</div>
+								</div>
+							</div>
+						
+							<div class="panel-body">
+								<h3>Template Driven form </h3>
+
+								
+									<form #form = "ngForm" (ngSubmit)="newPost(form.value)">
+									<input type="hidden" *ngFor="let s of session"  name="memberID" #memberID="ngModel" [(ngModel)] = "s.memberID" class="form-control">
+									<input type="hidden" *ngFor="let s of session"  name="post_email" #post_email="ngModel" [(ngModel)] = "s.email" class="form-control">
+									<div class="form-group">
+										<input type="text" required ngModel name="post_title"  #post_title="ngModel" class="form-control"   placeholder="Enter title">
+										<span *ngIf="post_title.touched && post_title.invalid" class="help-block text-danger"> Enter title</span>
+									</div> 
+									<div class="form-group">
+										<textarea required maxlength="250" ngModel name="post_description" #post_description="ngModel"  class="form-control mb-15 wysihtml5 wysihtml5-min" rows="6" cols="1" placeholder="What's on your mind?"></textarea>
+										<span *ngIf="post_description.touched && post_description.invalid" class="help-block text-danger"> 
+											<span *ngIf="post_description.errors.required" class="help-block text-danger"> This field is required</span>
+											<span *ngIf="post_description.errors.maxlength" class="help-block text-danger"> Maximum charater is 200</span>
+										</span>
+									</div>  
+									<div class="form-group">
+										
+										<input id="profilephoto"  ngModel name="profilephoto" #profilephoto="ngModel" >
+									</div>
+									<div class="form-group">
+										<select required ngModel name="category" #category="ngModel" data-placeholder="Choose an option..." class="form-control">
+											<option value=""></option> 
+											<option *ngFor="let c of categories" [value]="c.id">{{c.name}} </option> 
+										</select>
+										<span *ngIf="category.touched && category.invalid" class="help-block text-danger"> Enter title</span>
+									</div>
+									<div class="form-group">
+										<input type="checkbox" required ngModel name="isAgree"  /> Agree to terms & conditions
+									</div>
+
+									<div class="form-group">
+										<input type="radio" required ngModel name="isGood"  value="1" /> Agree to terms & conditions
+									</div>
+
+									<div class="form-group">
+										<input type="radio" required ngModel name="isGood" value="2" /> Agree to terms & conditions
+									</div>
+			
+										<div class="row">
+											<div class="col-xs-6">
+												<ul class="icons-list icons-list-extended mt-10">
+												<li><a class="openImageUploader" href="javascript:;" data-popup="tooltip" data-container="body" title="Add Photo"><i class="icon-images2"></i></a></li>						
+												<li><a class="openVideoUploader" href="javascript:;" data-popup="tooltip" data-container="body" title="Add video"><i class="icon-video-camera2"></i></a></li>
+												</ul>
+											</div>
+											
+											
+
+											<div class="col-xs-6 text-right">
+												<button type="submit" class="btn btn-inverse btn-labeled btn-labeled-right" [disabled]="!form.valid">Publish <b><i class="icon-circle-right2"></i></b></button>
+											</div>
+										</div>
+									</form>
+														<p>{{form.value | json}}</p>
+	                    	</div>
+						      </div>
+                        <!-- /share your thoughts -->
+						
+						
+                    </div>
+						
+
+					<div class="col-md-4">
+
+						<!-- Vertical form -->
+						<div class="panel panel-flat">
+							<!-- Latest updates -->
+							<div class="sidebar-category">
+								<div class="category-title">
+									<span>Posts List</span>
+									<ul class="icons-list">
+										<li><a href="#" data-action="collapse"></a></li>
+									</ul>
+								</div>
+
+								<div class="category-content">
+									<ul class="media-list">
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+											</div>
+
+											<div class="media-body">
+												Drop the IE <a href="#">specific hacks</a> for temporal inputs
+												<div class="media-annotation">4 minutes ago</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-commit"></i></a>
+											</div>
+											
+											<div class="media-body">
+												Add full font overrides for popovers and tooltips
+												<div class="media-annotation">36 minutes ago</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+											</div>
+											
+											<div class="media-body">
+												<a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span> branch
+												<div class="media-annotation">2 hours ago</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+											</div>
+											
+											<div class="media-body">
+												<a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and <span class="text-semibold">Dev</span> branches
+												<div class="media-annotation">Dec 18, 18:36</div>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-pull-request"></i></a>
+											</div>
+											
+											<div class="media-body">
+												Have Carousel ignore keyboard events
+												<div class="media-annotation">Dec 12, 05:46</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- /latest updates -->
+
+						</div>
+						<!-- /vertical form -->
+
+					</div>
+				</div>
+				<!-- /grid -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
