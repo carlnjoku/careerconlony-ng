@@ -1,413 +1,317 @@
 	<!-- Page container -->
 	<div class="page-container" @page @imganimate>
 
-		<!-- Page content -->
-		<div class="page-content">
+			<!-- Page content -->
+			<div class="page-content">
+	
+				<!-- Main content -->
+				<div class="content-wrapper">
+	
+	
+					<!-- User profile -->
+					<div class="row">
+						<div class="col-lg-9">
+				
+	
+					<!-- Course overview -->
+					<div class="panel panel-white">
+							<div class="panel-heading">
+								<h6 class="panel-title text-semibold">Manage Contacts</h6>
+		
+								<div class="heading-elements">
+									<ul class="list-inline list-inline-separate heading-text">
+										<li>Rating: <span class="text-semibold">4.85</span></li>
+										<li>
+											<i class="icon-star-full2 text-size-base text-warning-300"></i>
+											<i class="icon-star-full2 text-size-base text-warning-300"></i>
+											<i class="icon-star-full2 text-size-base text-warning-300"></i>
+											<i class="icon-star-full2 text-size-base text-warning-300"></i>
+											<i class="icon-star-full2 text-size-base text-warning-300"></i>
+											<span class="text-muted position-right">(439)</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+		
+							<ul class="nav nav-lg nav-tabs nav-tabs-bottom nav-tabs-toolbar no-margin">
+								<!--<li class="active"><a href="#contacts" data-toggle="tab"><i class="icon-collaboration position-left"></i> Contacts<span class="badge badge-success badge-inline position-right">0</span></a></li>
+								<li><a href="#request" data-toggle="tab"><i class="icon-bubble-dots3 position-left"></i> Contact Request</a></li>
+								<li><a href="#find" data-toggle="tab"><i class="icon-users2 position-left"></i> Find Contacts</a></li>
 
-			<!-- Main content -->
-			<div class="content-wrapper">
+								<li><a href="#invite" data-toggle="tab"><i class="icon-vcard position-left"></i> Invite Contacts</a></li>
+								<li><a href="#alumni" data-toggle="tab"><i class="icon-graduation2 position-left"></i> Find Alumni</a></li>
+								-->
+								<li routerLinkActive="active current"><a [routerLink]="['/contacts/my-contacts']"><i class="icon-collaboration position-left"></i> Contacts<span class="badge badge-success badge-inline position-right">0</span></a></li>
+								<li routerLinkActive="active current"><a [routerLink]="['/contacts/request']"><i class="icon-users2 position-left"></i> Contact Requests</a></li>
+								<li routerLinkActive="active current"><a [routerLink]="['/contacts/find']"><i class="icon-users2 position-left"></i> Find Contacts </a></li>
+								<li routerLinkActive="active current"><a [routerLink]="['/contacts/invite']"><i class="icon-users2 position-left"></i> Invite Contacts</a></li>
+								<li routerLinkActive="active current"><a [routerLink]="['/contacts/alumni']"><i class="icon-users2 position-left"></i> Find Alumin</a></li>
+								
+							</ul>
+		
+							<div class="tab-content">
+								<router-outlet></router-outlet>
+								<!--
+								<div class="tab-pane fade in active" id="contacts">
+									
+									<div class="panel-body" style="margin-top:30px">
+											<div class="row">
+													<div class="col-lg-3 col-md-6">
+														<div class="thumbnail">
+															<div class="thumb thumb-rounded">
+																<img src="assets/images/5863c7afb5bcb_black-woman-thinking.-pf.jpg" alt="">
+																<div class="caption-overflow">
+																	<span>
+																		<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+																		<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+																	</span>
+																</div>
+															</div>
+														
+															<div class="caption text-center">
+																<h6 class="text-semibold no-margin">James Alexander <small class="display-block">Lead developer</small></h6>
+																<ul class="icons-list mt-15">
+																	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+								
+													<div class="col-lg-3 col-md-6">
+														<div class="thumbnail">
+															<div class="thumb thumb-rounded">
+																<img src="assets/images/5976031aa7186_1.jpg" alt="">
+																<div class="caption-overflow">
+																	<span>
+																		<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+																		<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+																	</span>
+																</div>
+															</div>
+														
+															<div class="caption text-center">
+																<h6 class="text-semibold no-margin">Nathan Jacobson <small class="display-block">Lead UX designer</small></h6>
+																<ul class="icons-list mt-15">
+																	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+								
+													<div class="col-lg-3 col-md-6">
+														<div class="thumbnail">
+															<div class="thumb thumb-rounded">
+																<img src="assets/images/59639c879aa65_team2.jpg" alt="">
+																<div class="caption-overflow">
+																	<span>
+																		<a href="assets/images/59639c879aa65_team2.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+																		<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+																	</span>
+																</div>
+															</div>
+														
+															<div class="caption text-center">
+																<h6 class="text-semibold no-margin">Margo Baker <small class="display-block">Sales manager</small></h6>
+																<ul class="icons-list mt-15">
+																	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+								
+													<div class="col-lg-3 col-md-6">
+														<div class="thumbnail">
+															<div class="thumb thumb-rounded">
+																<img src="assets/images/5863cb5a7e3f0_why-you-should-consider-dating-african-girls.jpg" alt="">
+																<div class="caption-overflow">
+																	<span>
+																		<a href="assets/images/5863cb5a7e3f0_why-you-should-consider-dating-african-girls.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
+																		<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
+																	</span>
+																</div>
+															</div>
+														
+															<div class="caption text-center">
+																<h6 class="text-semibold no-margin">Barbara Walden <small class="display-block">SEO specialist</small></h6>
+																<ul class="icons-list mt-15">
+																	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
+																	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
+																</ul>
+															</div>
+														</div>
+													</div>
+											</div>
+									</div>
+									
+		
+								</div>
+								
+								<div class="tab-pane fade" id="request">
+									<div class="panel-body">
+											<div class="caption text-center" style="min-height:350px; padding-top:60px">
+													<h1 class="text-thin no-margin">You do not have any friend request yet</h1>
+													<p class="text-muted mb-15 mt-5">Dissuade ecstatic and properly saw entirely sir why laughter endeavor</p>
+					
+													<a href="#" class="btn bg-info"><i class="icon-paperplane position-left"></i> Send invitation</a>
+											</div>
+									</div>
+								</div>
+		
+								<div class="tab-pane fade" id="find">
+									<div class="panel-body">
+											<div class="caption text-center" style="min-height:350px; padding-top:60px">
+													<h1 class="text-thin no-margin">Members you may know</h1>
+													<p class="text-muted mb-15 mt-5">Dissuade ecstatic and properly saw entirely sir why laughter endeavor</p>
+					
+													<a href="#" class="btn bg-info"><i class="icon-paperplane position-left"></i> Send invitation</a>
+											</div>
+									</div>
+								</div>
 
-			
+								<div class="tab-pane fade" id="invite">
+										<div class="panel-body">
+												<div class="caption text-center" style="min-height:350px; padding-top:60px">
+														<h1 class="text-thin no-margin">Invite your friends already on careercolny</h1>
+														<p class="text-muted mb-15 mt-5">Dissuade ecstatic and properly saw entirely sir why laughter endeavor</p>
+						
+														<a href="#" class="btn bg-info"><i class="icon-paperplane position-left"></i> Send invitation</a>
+														 <h1 class="text-thin no-margin">OR</h1>
+														 
+														 <p class="text-muted mb-15 mt-5">Send your friend e-mail invitation to join CAREERCOLONY</p>
+												</div>
+										</div>
+								</div>
+
+
+								<div class="tab-pane fade" id="alumni">
+										<div class="panel-body">
+												<div class="caption text-center" style="min-height:350px; padding-top:60px">
+														<h1 class="text-thin no-margin">Find your class mates</h1>
+														<p class="text-muted mb-15 mt-5">Connect with yur former colleagues who are already members on careercolony</p>
+						
+														<a href="#" class="btn bg-info"><i class="icon-paperplane position-left"></i> Update Education</a>
+												</div>
+										</div>
+								</div>
+							-->
+
+							</div>
+						</div>
+						<!-- /course overview -->
+	
+				</div>
+	
+	
+			  
+	
+	
+						
+						
+							<div class="col-lg-3">
 				
 
-				<!-- Rounded thumbs -->
-				<h6 class="content-group text-semibold">
-					Rounded thumbs
-					<small class="display-block">Responsive rounded thumbs</small>
-				</h6>
-
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption-overflow">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
+							
+							<!-- Connections -->
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title">Latest connections</h6>
+									<div class="heading-elements">
+										<span class="badge badge-success heading-text">+32</span>
+									</div>
 								</div>
+	
+								
+								<ul class="media-list media-list-linked pb-5">
+									<li class="media-header">Office staff</li>
+	
+									<li class="media">
+										<a href="#" class="media-link">
+											<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-md" alt=""></div>
+											<div class="media-body">
+												<span class="media-heading text-semibold">James Alexander</span>
+												<span class="media-annotation">UI/UX expert</span>
+											</div>
+											<div class="media-right media-middle">
+												<span class="status-mark bg-success"></span>
+											</div>
+										</a>
+									</li>
+	
+									<li class="media">
+										<a href="#" class="media-link">
+											<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-md" alt=""></div>
+											<div class="media-body">
+												<span class="media-heading text-semibold">Jeremy Victorino</span>
+												<span class="media-annotation">Senior designer</span>
+											</div>
+											<div class="media-right media-middle">
+												<span class="status-mark bg-danger"></span>
+											</div>
+										</a>
+									</li>
+	
+									<li class="media">
+										<a href="#" class="media-link">
+											<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-md" alt=""></div>
+											<div class="media-body">
+												<div class="media-heading"><span class="text-semibold">Jordana Mills</span></div>
+												<span class="text-muted">Sales consultant</span>
+											</div>
+											<div class="media-right media-middle">
+												<span class="status-mark bg-grey-300"></span>
+											</div>
+										</a>
+									</li>
+	
+	
+									<li class="media">
+										<a href="#" class="media-link">
+											<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-md" alt=""></div>
+											<div class="media-body">
+												<span class="media-heading text-semibold">Beatrix Diaz</span>
+												<span class="media-annotation">Facebook</span>
+											</div>
+											<div class="media-right media-middle">
+												<span class="status-mark bg-warning-400"></span>
+											</div>
+										</a>
+									</li>
+	
+									<li class="media">
+										<a href="#" class="media-link">
+											<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-md" alt=""></div>
+											<div class="media-body">
+												<span class="media-heading text-semibold">Richard Vango</span>
+												<span class="media-annotation">Microsoft</span>
+											</div>
+											<div class="media-right media-middle">
+												<span class="status-mark bg-grey-300"></span>
+											</div>
+										</a>
+									</li>
+								</ul>
 							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">James Alexander <small class="display-block">Lead developer</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
+							<!-- /connections -->
+	
+						</div>
 					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption-overflow">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">Nathan Jacobson <small class="display-block">Lead UX designer</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption-overflow">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">Margo Baker <small class="display-block">Sales manager</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption-overflow">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">Barbara Walden <small class="display-block">SEO specialist</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
+					<!-- /user profile -->
+	
 				</div>
-
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded thumb-slide">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">Hanna Dorman <small class="display-block">UX/UI designer</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded thumb-slide">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">Benjamin Loretti <small class="display-block">Network engineer</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded thumb-slide">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">Vanessa Aurelius <small class="display-block">Front end guru</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="thumbnail">
-							<div class="thumb thumb-rounded thumb-slide">
-								<img src="assets/images/placeholder.jpg" alt="">
-								<div class="caption">
-									<span>
-										<a href="assets/images/placeholder.jpg" class="btn bg-success-400 btn-icon btn-xs" data-popup="lightbox"><i class="icon-plus2"></i></a>
-										<a href="user_pages_profile.html" class="btn bg-success-400 btn-icon btn-xs"><i class="icon-link"></i></a>
-									</span>
-								</div>
-							</div>
-						
-					    	<div class="caption text-center">
-					    		<h6 class="text-semibold no-margin">William Brenson <small class="display-block">Chief officer</small></h6>
-				    			<ul class="icons-list mt-15">
-			                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-			                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-		                    	</ul>
-					    	</div>
-				    	</div>
-					</div>
-				</div>
-				<!-- /rounded thumbs-->
-
-
-
-
-				<!-- Horizontal icons -->
-				<h6 class="content-group text-semibold">
-					Horizontal icons
-					<small class="display-block">Card with horizontal icons</small>
-				</h6>
-
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">James Alexander</h6>
-									<p class="text-muted">Lead developer</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">Nathan Jacobson</h6>
-									<p class="text-muted">Lead UX designer</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">Margo Baker</h6>
-									<p class="text-muted">Sales manager</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">Barbara Walden</h6>
-									<p class="text-muted">SEO specialist</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">Hanna Dorman</h6>
-									<p class="text-muted">UX/UI designer</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">Benjamin Loretti</h6>
-									<p class="text-muted">Network engineer</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">Vanessa Aurelius</h6>
-									<p class="text-muted">Front end guru</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-body">
-							<div class="media">
-								<div class="media-left">
-									<a href="assets/images/placeholder.jpg" data-popup="lightbox">
-										<img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle img-md" alt="">
-									</a>
-								</div>
-
-								<div class="media-body">
-									<h6 class="media-heading">William Brenson</h6>
-									<p class="text-muted">Chief officer</p>
-
-									<ul class="icons-list">
-				                    	<li><a href="#" data-popup="tooltip" title="Google Drive" data-container="body"><i class="icon-google-drive"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Twitter" data-container="body"><i class="icon-twitter"></i></a></li>
-				                    	<li><a href="#" data-popup="tooltip" title="Github" data-container="body"><i class="icon-github"></i></a></li>
-			                    	</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /horizontal icons -->
-
+				<!-- /main content -->
+	
 			</div>
-			<!-- /main content -->
-
+			<!-- /page content -->
+	
 		</div>
-		<!-- /page content -->
+		<!-- /page container -->
 
-	</div>
-	<!-- /page container -->
+
+

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { trigger, state, animate, transition, style, keyframes, query, stagger } from '@angular/animations';
 import { UserService } from '../services/user.service'
 import { ExperienceService } from '../services/experience.service'
@@ -57,6 +57,11 @@ import { Observable } from 'rxjs/Observable';
   ]
 })
 export class BuzzComponent implements OnInit {
+
+@Input() myval
+ result=[]
+ //url =''
+ base_url = 'https://api.embedly.com/1/oembed?'
  wee: any;
  isShareLinkThought: boolean = false
  isSharePhoto: boolean = false
@@ -65,7 +70,7 @@ export class BuzzComponent implements OnInit {
   
  isUserLoggedin
  session
-  post = {
+ post = {
           title:'This is a sample post',
           likeCount: 14,
           isLiked:true
@@ -75,8 +80,16 @@ export class BuzzComponent implements OnInit {
   lastname
   email
   memberID
-  constructor(private user:UserService, private expService:ExperienceService) { 
+  showSelected : boolean;
 
+  public loginForm = this.fb.group({
+    email: ["", Validators.required],
+    profilephoto: ["", Validators.required],
+    password: ["", Validators.required]
+  });
+
+  constructor(public fb: FormBuilder, private http:Http, private user:UserService, private expService:ExperienceService) { 
+    this.showSelected = false;
   }
 
   onLikeChanged(isLiked){
@@ -89,12 +102,13 @@ export class BuzzComponent implements OnInit {
       .subscribe(posts =>  this.posts = posts)
     */
 
-    
+    console.log(this.myval)
  
     console.log(this.user.getUserLoggedin())
     
     let details = JSON.parse(localStorage.getItem("userdetails"));
     this.session = details;
+    console.log(this.session)
     
     this.memberID = details.memberID;
     let memberID = this.session.map(item => item.memberID)
@@ -113,17 +127,16 @@ export class BuzzComponent implements OnInit {
     .subscribe((res => console.log(res)))
     
   
-  
-  
   }
 
-
+  
   shareThoughtLinik(){
     this.isShareLinkThought = true
-    this.isSharePhoto = false
-    this.isShareVideo = false
-    this.isShareDefault = false
+    //this.isSharePhoto = false
+    //this.isShareVideo = false
+    //this.isShareDefault = false
   }
+  /*
   sharePhoto(){
     this.isSharePhoto = true
     this.isShareLinkThought = false
@@ -136,4 +149,30 @@ export class BuzzComponent implements OnInit {
     this.isShareLinkThought = false
     this.isShareDefault = false
   }
+  */
+
+  
+  onPaste(data:string){
+    
+    //d2f283608a3b4fa4a6ba77b522d4e26d
+    let full_url = this.base_url+'url='+data+'&key=1d5c48f7edc34c54bdae4c37b681ea2b&autoplay=true'
+    this.http.get(full_url).map(res => res.json()).subscribe(data => {
+      this.result = data;
+      console.log(this.result)
+
+    });
+
+  }
+
+  doLogin(event) {
+    console.log(event);
+    console.log(this.loginForm.value);
+  }
+
+  onPasted(event){
+    console.log(event)
+  }
+
+
+  
 }

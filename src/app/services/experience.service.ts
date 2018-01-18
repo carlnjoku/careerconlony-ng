@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 export class ExperienceService extends DataService {
   
    constructor(http:Http) { 
-    super('http://localhost:8080/get-experience/memberID', http)
+    super('http://localhost:8087/get-experience/memberID', http)
   }
 
 }

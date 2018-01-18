@@ -18,10 +18,11 @@
 						</div>
 
 						<div class="panel-body">
-							<form action="#">
+								
+							<form [formGroup]="searchform" (ngSubmit)="onJobSearch()">
 								<div class="form-group">
 									<div class="has-feedback has-feedback-left">
-										<input type="search" class="form-control" placeholder="Job title or keywords">
+										<input type="search" (input)="jobSearch($event.target.value)" formControlName="jobTitle" class="form-control" placeholder="Job title or keywords">
 										<div class="form-control-feedback">
 											<i class="icon-reading text-size-large text-muted"></i>
 										</div>
@@ -30,35 +31,14 @@
 
 								<div class="form-group">
 									<div class="has-feedback has-feedback-left">
-										<input type="search" class="form-control" placeholder="Location">
+										<input type="search" formControlName="location" class="form-control" placeholder="Location">
 										<div class="form-control-feedback">
 											<i class="icon-pin-alt text-size-large text-muted"></i>
 										</div>
 									</div>
 								</div>
 
-								<div class="form-group">
-									<div class="checkbox">
-										<label class="display-block">
-											<input type="checkbox" class="styled">
-											Full time
-										</label>
-									</div>
 
-									<div class="checkbox">
-										<label class="display-block">
-											<input type="checkbox" class="styled">
-											Part time
-										</label>
-									</div>
-
-									<div class="checkbox">
-										<label class="display-block">
-											<input type="checkbox" class="styled">
-											Remote
-										</label>
-									</div>
-								</div>
 
 								<button type="submit" class="btn bg-blue btn-block">
 									<i class="icon-search4 text-size-base position-left"></i>
@@ -568,7 +548,7 @@
 						<li class="media panel-body stack-media-on-mobile">
 							<div class="media-left">
 								<a href="#">
-									<img src="assets/images/placeholder.jpg" class="img-rounded img-lg" alt="">
+									<img src="assets/images/sample-logos/mcdonald.jpeg" class="img-rounded img-lg" alt="">
 								</a>
 							</div>
 
@@ -593,7 +573,7 @@
 						<li class="media panel-body stack-media-on-mobile">
 							<div class="media-left">
 								<a href="#">
-									<img src="assets/images/placeholder.jpg" class="img-rounded img-lg" alt="">
+									<img src="assets/images/sample-logos/redbull.png" class="img-rounded img-lg" alt="">
 								</a>
 							</div>
 
@@ -618,7 +598,7 @@
 						<li class="media panel-body stack-media-on-mobile">
 							<div class="media-left">
 								<a href="#">
-									<img src="assets/images/placeholder.jpg" class="img-rounded img-lg" alt="">
+									<img src="assets/images/sample-logos/fedx.png" class="img-rounded img-lg" alt="">
 								</a>
 							</div>
 
@@ -643,7 +623,7 @@
 						<li class="media panel-body stack-media-on-mobile">
 							<div class="media-left">
 								<a href="#">
-									<img src="assets/images/placeholder.jpg" class="img-rounded img-lg" alt="">
+									<img src="assets/images/sample-logos/bmw.jpeg" class="img-rounded img-lg" alt="">
 								</a>
 							</div>
 
@@ -668,7 +648,7 @@
 						<li class="media panel-body stack-media-on-mobile">
 							<div class="media-left">
 								<a href="#">
-									<img src="assets/images/placeholder.jpg" class="img-rounded img-lg" alt="">
+									<img src="assets/images/sample-logos/amazon.jpeg" class="img-rounded img-lg" alt="">
 								</a>
 							</div>
 

@@ -11,7 +11,7 @@ export class SignupService {
   private isUserLoggedin ;
   private newuser: any;
  
-  private itemsEndpoint = 'http://localhost:8080/new-member';
+  private itemsEndpoint = 'http://localhost:8086/new-member';
   
 
   constructor(private http:Http) { 

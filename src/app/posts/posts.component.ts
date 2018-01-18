@@ -122,9 +122,6 @@ export class PostsComponent implements OnInit {
 */
   photo(photo){
     console.log(photo)
-
-
-
   }
 /*
   newCustomer(): void {

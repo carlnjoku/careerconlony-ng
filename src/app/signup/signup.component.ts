@@ -69,6 +69,7 @@ export class SignupComponent implements OnInit {
       response =>{ 
         localStorage.setItem('userdetails', JSON.stringify(response));
         console.log(response)
+        this.router.navigate(["/signup-steps"]);
       },
       (error: Response) => {
         if(error.status === 400){

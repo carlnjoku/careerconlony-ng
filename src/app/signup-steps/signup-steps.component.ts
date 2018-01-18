@@ -50,7 +50,9 @@ export class SignupStepsComponent implements OnInit {
   private memberID 
   private userIP
   private firstname
+  private lastname
   private email
+  private address
   private country
   private postCode
   private employer_name
@@ -71,6 +73,9 @@ export class SignupStepsComponent implements OnInit {
 
   form = new FormGroup({
         memberID: new FormControl(''),
+        firstname: new FormControl(''),
+        lastname: new FormControl(''),
+        address: new FormControl(''),
         userIP: new FormControl(''),
         email: new FormControl(''),
         country: new FormControl(''),
@@ -100,10 +105,15 @@ export class SignupStepsComponent implements OnInit {
     let fname = this.session.map(item => item.firstname)
     this.firstname = fname[0]
 
+    let lname = this.session.map(item => item.lastname)
+    this.lastname = lname[0]
+
    
       
     this.form = fb.group({
             memberID: this.memberID,
+            firstname: this.firstname,
+            lastname: this.lastname,
             userIP: this.userIP,
             email: this.email,
             country: 'Nigeria',
@@ -217,7 +227,8 @@ export class SignupStepsComponent implements OnInit {
     this.signupstepsService.update(this.form.value)
     .subscribe(
       response =>{ 
-      
+        console.log("welcome")
+        
       },
       (error: Response) => {
         if(error.status === 400){
@@ -225,6 +236,7 @@ export class SignupStepsComponent implements OnInit {
           alert('This post already exist')
         }else{
           alert('An unexpected error occur')
+          this.router.navigate(["/email-confirmation"]);
         }
       }
     )

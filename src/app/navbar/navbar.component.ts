@@ -10,11 +10,13 @@ import { UserService } from '../services/user.service'
 export class NavbarComponent implements OnInit {
 
   private isUserLoggedin: boolean ;
+  searches ;
 
   constructor(private user:UserService) { }
 
   ngOnInit() {
     this.isUserLoggedin = this.user.getUserLoggedin()
+    //console.log(this.isUserLoggedin)
   }
 
 

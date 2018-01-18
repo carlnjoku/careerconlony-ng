@@ -8,7 +8,7 @@ import { Http } from '@angular/http';
 export class UserService extends DataService {
 
   constructor(http:Http) { 
-    super('http://localhost:8080/get-user/memberID', http)
+    super('http://localhost:8086/get-user/memberID', http)
   }
 
 }

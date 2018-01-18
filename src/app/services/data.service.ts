@@ -25,7 +25,10 @@ export class DataService {
     this.isUserLoggedin = false
   }
 
-  
+  embedly(data){
+    return this.http.get(this.url)
+      .map(response => response.json())
+  }
   
   
   getAll(){
@@ -44,10 +47,10 @@ export class DataService {
 
 
 getUserWithExperience(id: number): Observable<any> {
-  return this.http.get('http://localhost:8080/get-experience/memberID/' + id)
+  return this.http.get('http://localhost:8086/get-experience/memberID/' + id)
     .map((res: any) => res.json())
     .flatMap((exp: any) => {
-      return this.http.get('http://localhost:8080/get-user/memberID/' + 5)
+      return this.http.get('http://localhost:8086/get-user/memberID/' + id)
         .map((res: any) => {
           let member = res.json();
           exp.member = member;
@@ -121,7 +124,7 @@ getUserWithExperience(id: number): Observable<any> {
 
   userLogin(resource) {
         let headers = new Headers({ 'Content-Type': 'application/json'});
-        return this.http.post('http://localhost:8080/login', JSON.stringify(resource),  { headers: headers })
+        return this.http.post('http://localhost:8086/login', JSON.stringify(resource),  { headers: headers })
            .map(response => response.json())         
   }
 

@@ -10,6 +10,11 @@ export class CompaniesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  doLogin($event){
+    
   }
 
 }

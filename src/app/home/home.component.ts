@@ -108,6 +108,7 @@ export class HomeComponent implements OnInit {
                     // Store user deatils in storage
                     localStorage.setItem('userdetails', JSON.stringify(result));
                     console.log(result)
+
                     // Store deatils in storage
                     localStorage.setItem('isUserLoggedin', 'true');
                     this.router.navigate(['/buzz']);

@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 export class NewPostService extends DataService {
   
    constructor(http:Http) { 
-    super('http://localhost:8083/new-post', http)
+    super('http://localhost:8088/new-post', http)
   }
 
 }
